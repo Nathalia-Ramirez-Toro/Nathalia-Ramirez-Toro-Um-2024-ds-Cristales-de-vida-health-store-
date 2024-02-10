@@ -1,0 +1,17 @@
+La tienda naturista Cristales de Vida es un establecimiento, como su nombre indica, que vende productos de 
+medicina alternativa, como los productos a base de plantas que ayudan a prevenir o mejorar el funcionamiento del cuerpo humano.
+
+La tienda fue abierta en el año 2013, pero no cuenta con un sistema de inventario sistemático, ya que actualmente se realiza de 
+forma manual, escrita en un cuaderno, lo que conlleva a poco orden y eficiencia al momento de realizar el cierre de 
+mes, el registro diario de ventas y saber el stock que se cuenta en la tienda al vender. Por esta razón, se ha 
+tomado la decisión de llevar a cabo un proyecto de inventario para facilitar al trabajador o persona encargada de la
+tienda que pueda llevar una contabilidad más fácil y no tan enredada.
+
+Este proyecto inicialmente cuenta con 4 funcionalidades principales que se pueden observar en la imagen 3 (venta), imagen 4 (compra),
+imagen 5 (informes) e imagen 6 (inventario). Estas 4 visuales desempeñan un papel importante, amigable y fácil de 
+entender para el usuario final, ya que en cada una de estas visuales se podrá encontrar lo necesario y básico para poder llevar una 
+contabilidad más ordenada. Contarán con palabras clave que se usan día a día en este ambiente, como son producto, cantidad, precio y
+laboratorio.
+
+Para brindar seguridad, se otorgarán permisos de administradores y usuarios para que ninguna persona malintencionada pueda 
+borrar o editar algún dato importante.
