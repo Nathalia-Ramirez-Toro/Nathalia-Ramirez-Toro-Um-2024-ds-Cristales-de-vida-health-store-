@@ -1,0 +1,31 @@
+@startuml
+
+:Usuario: as usuario  
+(El usuario inicio secion) as (iniciar sesion)
+:usuario: --right--> (ISU) 
+
+
+(Selecciona una accion venta, compra, informe, inventario) as (SA)
+:usuario: --right--> (SA) 
+
+
+(Selecciona el producto) as (SP)
+(Selecciona el cantidad) as (SC)
+:usuario: --right--> (SP) 
+(SP)-down-> (SC)
+
+
+
+(Selecciona el producto) as (SCOD)
+(Selecciona el cantidad) as (SCAND)
+(Selecciona el valor) as (SVAL)
+:usuario: --right--> (SCOD) 
+(SCOD)-down-> (SCAND)
+(SCOD)-right-> (SVAL)
+
+
+
+
+(Busca producto) as (BP)
+:usuario: --right--> (BP)
+@enduml

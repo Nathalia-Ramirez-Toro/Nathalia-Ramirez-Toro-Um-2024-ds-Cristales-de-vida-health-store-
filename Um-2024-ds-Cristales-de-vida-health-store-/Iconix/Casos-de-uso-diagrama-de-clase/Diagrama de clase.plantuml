@@ -1,0 +1,45 @@
+@startuml
+
+class Usuario {
+  nombreUsuario: String
+  contrasena: String
+  iniciarSesion()
+}
+
+
+class Accion {
+  SeleccionarLoDeseadoHacer()
+}
+
+class Venta {
+  nombreProducto:String
+  laboratorio: String
+  CantidadVendida:int
+  OperacionDeVenta()
+  GuardarVenta()
+}
+
+class Compra {
+  nombreProducto:String
+  laboratorio: String
+  CantidadComprada:int
+  ValorCntidadComprada:int
+  OperacionDeCompra()
+  GuardarCompra()
+}
+
+class Inventario {
+  NombreProductoBuscar:String
+  MostrarProductos()
+}
+
+
+Accion o--  Usuario
+Venta o--Accion
+Compra o--Accion
+Inventario o--Accion
+Inventario <-- Venta
+Inventario<--Compra
+
+
+@enduml
