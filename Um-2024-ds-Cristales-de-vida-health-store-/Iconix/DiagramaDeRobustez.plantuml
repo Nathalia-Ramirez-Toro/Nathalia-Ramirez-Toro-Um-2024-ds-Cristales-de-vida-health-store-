@@ -1,0 +1,49 @@
+@startuml
+
+actor Usuario
+boundary " FE Inicio Sesión" as inicioSesion
+Usuario -right-> inicioSesion
+control " BE Validar Usuario y Contraseña" as ingresarUsuarioContrasena
+inicioSesion -right-> ingresarUsuarioContrasena
+entity "Usuarios" as baseDatos
+ingresarUsuarioContrasena --> baseDatos
+baseDatos -down-> ingresarUsuarioContrasena
+boundary "Mostrar Error" as mostrarError
+baseDatos -down-> mostrarError
+boundary "Ventana Acción" as ventanaAccion
+ingresarUsuarioContrasena -> ventanaAccion
+control "Seleccionar opción de compra" as seleccionarCompra
+control "Seleccionar opción de venta" as seleccionarVenta
+control "Seleccionar opción de inventario" as seleccionarInventario
+ventanaAccion -> seleccionarCompra
+ventanaAccion -> seleccionarVenta
+ventanaAccion -> seleccionarInventario
+boundary "Ventana Venta" as ventanaVenta
+control " BE obtener productos existentes" as obtenerProductos
+boundary "cantidad en stock" as cantidadenstock
+boundary "Nombre en producto" as mostrarproducto
+entity "Base de Datos Producto" as baseDatosProducto
+seleccionarVenta -down-> ventanaVenta
+obtenerProductos-->baseDatosProducto
+baseDatosProducto--->cantidadenstock
+baseDatosProducto-->mostrarproducto
+control "Seleccionar producto" as seleccionarProducto
+ventanaVenta -> seleccionarProducto
+seleccionarProducto -> obtenerProductos
+control " ingresar cantidad" as seleccionarcantidad
+seleccionarcantidad-up-> ventanaVenta
+control " Validar cantidad" as validarcantidad
+validarcantidad-up-> seleccionarcantidad
+boundary " error " as errorcantidad 
+errorcantidad--up->validarcantidad: igual a 0
+control "Calcular valor de venta" as calcularValorVenta
+control "Operación de venta" as operacionVenta
+validarcantidad -left-> calcularValorVenta
+calcularValorVenta -left-> operacionVenta
+boundary "precio producto" as precioproducto
+precioproducto -->operacionVenta
+boundary "Seleccionar Guardar" as guardarventa
+ventanaVenta-up->guardarventa
+control "Método de guardar venta" as metodoGuardarVenta
+guardarventa-left->metodoGuardarVenta
+@enduml
